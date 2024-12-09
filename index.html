@@ -1,0 +1,208 @@
+
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk dengan Latar Belakang dan 4 Foto</title>
+    <style>
+        /* Gaya untuk body halaman */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            body {
+    background-color: #f0f0f0; /* Menggunakan warna ungu.jpg sebagai latar belakang */
+}arna ungu sebagai latar belakang
+
+        /* Latar belakang halaman */
+        .background {
+            background-image: url('.jpg'); /* Ganti dengan g */
+            background-size: cover;
+            background-position: center;
+            height: 1200pxvh; /* Menggunakan tinggi layar penuh */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Grid untuk 4 foto produk */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+            grid-gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+
+        .product {
+            background-color: rgba(255, 255, 255, 0.8); /* Efek transparansi */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .product button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Efek hover pada tombol */
+        .product button:hover {
+            background-color: #555;
+        }
+
+        /* Responsif untuk perangkat lebih kecil */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr; /* Menampilkan produk dalam satu kolom */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Latar belakang halaman -->
+<div class="background">
+    <!-- Grid Produk -->
+    <div class="product-grid">
+        <!-- Produk 1 -->
+        <div class="product">
+            <img src="logo.jpg" alt="JF Store "> <!-- Ganti dengan gambar produk pertama -->
+            <h3></h3>
+            <p>JF Store</p>
+        
+        </div>
+        
+        <!-- Produk 2 -->
+        <div class="product">
+            <img src="Sepatu Futsal.jpg" alt="Jarsay Futsal 2"> <!-- Ganti dengan gambar produk kedua -->
+            <h3>Sepatu Futsal </h3>
+            <p>JF Store</p>
+            <p>Harga: Rp. 175.000</p>
+            <button onclick="addToCart('JF Store', 175000)">Beli</button>
+        </div>
+
+        <!-- Produk 3 -->
+        <div class="product">
+            <img src="Jersey.jpg" alt="Jarsay Futsal "> <!-- Ganti dengan gambar produk ketiga -->
+            <h3>Jarsay Futsal </h3>
+            <p>JF Store</p>
+            <p>Harga: Rp. 160.000</p>
+            <button onclick="addToCart('JF Store', 160000)">Beli</button>
+        </div>
+
+        <!-- Produk 4 -->
+        <div class="product">
+            <img src="KANEEPAD & Elbowpad.jpg" alt="KANEEPAD & Elbowpad"> <!-- Ganti dengan gambar produk keempat -->
+            <h3>KANEEPAD & Elbowpad</h3>
+            <p>JF Store</p>
+            <p>Harga: Rp. 180.000</p>
+            <button onclick="addToCart('JF Store', 180000)">Beli</button>
+        </div>
+    </div>
+</div>
+
+<!-- Fungsi JavaScript untuk menambahkan produk ke keranjang -->
+<script>
+    function addToCart(store, price) {
+        alert('Produk dari 'JF + store + ' ditambahkan ke keranjang dengan harga Rp.175000' + price);
+    }
+</script>
+
+</body>
+</html>
+</script><!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRIS Pembayaran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        .qris-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+            display: none; /* Hidden initially */
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 80%;
+            max-width: 400px;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>QRIS Pembayaran</h1>
+    
+    <button onclick="showQR()">Bayar dengan QRIS</button> <!-- Tombol pembayaran QRIS -->
+
+    <div class="qris-container" id="qrisContainer">
+        <h2>Scan QR Code untuk Pembayaran</h2>
+        <p>Silakan scan QR Code berikut untuk melakukan pembayaran.</p>
+        <img id="qrisCode" src="Sken.jpg" alt="QRIS Pembayaran DANA"> <!-- Ganti dengan URL atau file gambar QRIS Anda -->
+        <p>Terima kasih telah berbelanja!</p>
+    </div>
+
+    <script>
+        function showQR() {
+            var qrisContainer = document.getElementById("qrisContainer");
+            qrisContainer.style.display = "block"; // Menampilkan QRIS code
+        }
+    </script>
+
+</body>
