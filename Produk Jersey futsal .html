@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk dengan Latar Belakang dan 4 Foto</title>
+    <style>
+        /* Gaya untuk body halaman */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Latar belakang halaman */
+        .background {
+            background-image: url('background.jpg'); /* Ganti dengan gambar latar belakang Anda */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Menggunakan tinggi layar penuh */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Grid untuk 4 foto produk */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+            grid-gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+
+        .product {
+            background-color: rgba(255, 255, 255, 0.8); /* Efek transparansi */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .product button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Efek hover pada tombol */
+        .product button:hover {
+            background-color: #555;
+        }
+
+        /* Responsif untuk perangkat lebih kecil */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr; /* Menampilkan produk dalam satu kolom */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Latar belakang halaman -->
+<div class="background">
+    <!-- Grid Produk -->
+    <div class="product-grid">
+        <!-- Produk 1 -->
+        <div class="product">
+            <img src="jersey.jpg" alt="Jarsay Futsal 1"> <!-- Ganti dengan gambar produk pertama -->
+            <h3>Jarsay Futsal 1</h3>
+            <p>JF Store</p>
+            <p>Harga: Rp. 150.000</p>
+            <button onclick="addToCart('JF Store', 150000)">Beli</button>
+        </div>
+        
+        <!-- Produk 2 -->
+        <div class="product">
+            <img src="product2.jpg" alt="Jarsay Futsal 2"> <!-- Ganti dengan gambar produk kedua -->
+            <h3>Jarsay Futsal 2</h3>
+            <p>JF Store</p>
+            <p>Harga: Rp. 175.000</p>
+            <button onclick="addToCart('JF Store', 175000)">Beli</button>
+        </div>
+
+        <!-- Produk 3 -->
+        <div class="product">
+            <img src="product3.jpg" alt="Jarsay Futsal 3"> <!-- Ganti dengan gambar produk ketiga -->
+            <h3>Jarsay Futsal 3</h3>
+            <p>JF Store</p>
+            <p>Harga: Rp. 160.000</p>
+            <button onclick="addToCart('JF Store', 160000)">Beli</button>
+        </div>
+
+        <!-- Produk 4 -->
+        <div class="product">
+            <img src="product4.jpg" alt="Jarsay Futsal 4"> <!-- Ganti dengan gambar produk keempat -->
+            <h3>Jarsay Futsal 4</h3>
+            <p>JF Store</p>
+            <p>Harga: Rp. 180.000</p>
+            <button onclick="addToCart('JF Store', 180000)">Beli</button>
+        </div>
+    </div>
+</div>
+
+<!-- Fungsi JavaScript untuk menambahkan produk ke keranjang -->
+<script>
+    function addToCart(store, price) {
+        alert('Produk dari ' + store + ' ditambahkan ke keranjang dengan harga Rp. ' + price);
+    }
+</script>
+
+</body>
+</html>
